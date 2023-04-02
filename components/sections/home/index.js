@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { PRODUCTS } from '../../../constants';
 import Checkbox from '../../../elements/checkbox';
 import Input from '../../../elements/input';
 import Radio from '../../../elements/radio';
+import Pagination from '../../pagination/index.';
 import ProductCard from '../../productCard';
 import Style from './style.module.scss';
 const HomeSection = () => {
+  const [page, setPage] = useState(1);
+  const pages = Math.ceil(PRODUCTS?.length / 12)
+  console.log(PRODUCTS?.length / 12)
   return (
     <section className="section">
       <div className="container">
@@ -79,10 +84,13 @@ const HomeSection = () => {
           </div>
           <div className="col-8">
             <div className={Style.cardContainer}>
-              {PRODUCTS?.map(i => (
+              {PRODUCTS?.slice((page - 1) * 12, page * 12)?.map(i => (
                 <ProductCard key={i?.id} img={i?.image} price={i?.price} title={i?.name} />
               ))}
             </div>
+          </div>
+          <div className="col-12">
+            <Pagination pages={pages} page={page} setPage={setPage} />
           </div>
         </div>
       </div>
