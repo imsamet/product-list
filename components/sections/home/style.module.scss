@@ -1,5 +1,7 @@
 .filterContainer {
   margin-bottom: 19px;
+  max-height: 400px;
+  overflow: scroll;
   & > span {
     font-style: normal;
     font-weight: 400;
