@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px 12px;
+  grid-gap: 8px;
+  svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.4;
+  }
+  input {
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

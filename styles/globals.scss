@@ -3,13 +3,13 @@
 @import 'mixins';
 @import 'fonts';
 @import 'variables';
-@import 'components';
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: $font-default
+  font-family: $font-default;
+  background-color: #f9f9f9;
 }
 
 a {
