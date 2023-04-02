@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 10px;
+  background-color: #fff;
+}
+.imgBox {
+  position: relative;
+  aspect-ratio: 160 / 150;
+  background: #c4c4c4;
+}
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #2a59fe;
+  }
+  h3{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+  }
+}

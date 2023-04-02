@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+.button{
+  outline: none;
+  border: none;
+  background: $color-primary;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding: 8px 16px;
+  color: #fff;
+}

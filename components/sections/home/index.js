@@ -1,6 +1,8 @@
+import { PRODUCTS } from '../../../constants';
 import Checkbox from '../../../elements/checkbox';
 import Input from '../../../elements/input';
 import Radio from '../../../elements/radio';
+import ProductCard from '../../productCard';
 import Style from './style.module.scss';
 const HomeSection = () => {
   return (
@@ -33,7 +35,7 @@ const HomeSection = () => {
             <div className={Style.filterContainer}>
               <span>Brands</span>
               <div className={Style.filterBox}>
-              <Input className={Style.search}/>
+                <Input className={Style.search} />
                 <div className={Style.filterItem}>
                   <Checkbox />
                   <span>Old to new</span>
@@ -55,7 +57,7 @@ const HomeSection = () => {
             <div className={Style.filterContainer}>
               <span>Model</span>
               <div className={Style.filterBox}>
-              <Input className={Style.search}/>
+                <Input className={Style.search} />
                 <div className={Style.filterItem}>
                   <Checkbox />
                   <span>Old to new</span>
@@ -73,6 +75,13 @@ const HomeSection = () => {
                   <span>Price low to High</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="col-8">
+            <div className={Style.cardContainer}>
+              {PRODUCTS?.map(i => (
+                <ProductCard key={i?.id} img={i?.image} price={i?.price} title={i?.name} />
+              ))}
             </div>
           </div>
         </div>
