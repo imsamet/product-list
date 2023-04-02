@@ -1,9 +1,10 @@
 import Nav from '../nav';
 
-const Layout = () => {
+const Layout = ({children}) => {
   return (
     <>
       <Nav />
+      {children}
     </>
   );
 };
