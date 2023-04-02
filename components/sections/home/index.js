@@ -8,7 +8,9 @@ import ProductCard from '../../productCard';
 import Style from './style.module.scss';
 const HomeSection = () => {
   const [page, setPage] = useState(1);
+  const [searchBrands, setSearchBrands] = useState('');
   const [selectBrands, setSelectBrands] = useState([]);
+  const [searchModels, setSearchModels] = useState('');
   const [selectModels, setSelectModels] = useState([]);
   const [products, setProducts] = useState(PRODUCTS);
   const pages = Math.ceil(products?.length / 12);
@@ -47,6 +49,12 @@ const HomeSection = () => {
     setSelectModels(newSelectedModels);
     filterProduct();
   };
+  const handleChangeBards = e => {
+    setSearchBrands(e.target.value);
+  };
+  const handleChangeModels = e => {
+    setSearchModels(e.target.value);
+  };
   return (
     <section className="section">
       <div className="container">
@@ -75,27 +83,31 @@ const HomeSection = () => {
               </div>
             </div>
             <div className={Style.filterContainer}>
-              <span>Model</span>
+              <span>Bards</span>
               <div className={Style.filterBox}>
-                <Input className={Style.search} />
-                {bards?.map(i => (
-                  <div key={i} className={Style.filterItem}>
-                    <Checkbox onChange={() => handleClickBrand(i)} />
-                    <span>{i}</span>
-                  </div>
-                ))}
+                <Input onChange={handleChangeBards} className={Style.search} />
+                {bards
+                  ?.filter(i => (searchBrands !== '' ? i.toLowerCase().includes(searchBrands.toLowerCase()) : true))
+                  ?.map(i => (
+                    <div key={i} className={Style.filterItem}>
+                      <Checkbox onChange={() => handleClickBrand(i)} />
+                      <span>{i}</span>
+                    </div>
+                  ))}
               </div>
             </div>
             <div className={Style.filterContainer}>
-              <span>Brands</span>
+              <span>Models</span>
               <div className={Style.filterBox}>
-                <Input className={Style.search} />
-                {models?.map(i => (
-                  <div key={i} className={Style.filterItem}>
-                    <Checkbox onChange={() => handleClickModel(i)} />
-                    <span>{i}</span>
-                  </div>
-                ))}
+                <Input onChange={handleChangeModels} className={Style.search} />
+                {models
+                  ?.filter(i => (searchModels !== '' ? i.toLowerCase().includes(searchModels.toLowerCase()) : true))
+                  ?.map(i => (
+                    <div key={i} className={Style.filterItem}>
+                      <Checkbox onChange={() => handleClickModel(i)} />
+                      <span>{i}</span>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
