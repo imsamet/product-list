@@ -11,6 +11,7 @@ const Nav = () => {
   useEffect(() => {
     setTotal(`${totalPrice(basket)}₺`)
   }, [basket])
+  console.log(totalPrice(basket))
   return (
     <nav className={Style.nav}>
       <div className="container">

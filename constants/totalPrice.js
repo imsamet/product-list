@@ -12,6 +12,6 @@ const totalPrice = (basket) => {
   })
     .format(price)
     .replace('₺', '')
-  return <>{data}</>;
+  return data;
 };
 export default totalPrice
