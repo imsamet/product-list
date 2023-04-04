@@ -1,0 +1,108 @@
+.filterContainer {
+  margin-bottom: 19px;
+  max-height: 400px;
+  overflow: scroll;
+  & > span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #333333b3;
+  }
+}
+.filterBox {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  gap: 15px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.filterItem {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+.search {
+  background: #fafafb;
+  max-width: 100%;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 26px;
+}
+.basketBox {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  grid-gap: 10px;
+  .headBox {
+    h4 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 0;
+    }
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      color: #2a59fe;
+    }
+  }
+  .countBox {
+    display: flex;
+    span {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+        linear-gradient(0deg, rgba(42, 89, 254, 0.3), rgba(42, 89, 254, 0.3)), #000000;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+    .count {
+      background: #2a59fe;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: initial;
+    }
+  }
+}
+.sticy {
+  position: sticky;
+  top: 50px;
+}
+.checkout {
+  label{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #2A59FE;
+  }
+}

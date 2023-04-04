@@ -1,10 +1,18 @@
+import Checkout from '../checkout';
 import Nav from '../nav';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Nav />
-      {children}
+      <section className="section">
+        <div className="container">
+          <div className="row">
+            {children}
+            <Checkout />
+          </div>
+        </div>
+      </section>
     </>
   );
 };
