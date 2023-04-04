@@ -11,7 +11,6 @@ import Loading from '../../loading';
 const HomeSection = () => {
   const dispatch = useDispatch();
   const { products, loading } = useSelector(state => state.products);
-  const { basket } = useSelector(state => state.basket);
   const [page, setPage] = useState(1);
   const [searchBrands, setSearchBrands] = useState('');
   const [selectBrands, setSelectBrands] = useState([]);
