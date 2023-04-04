@@ -15,13 +15,13 @@ const Nav = () => {
     <nav className={Style.nav}>
       <div className="container">
         <div className="row">
-          <div className={cn('col-2', Style.contentBox)}>
+          <div className={cn('col-4 col-sm-6 col-md-3 col-xl-2', Style.contentBox)}>
             <h1 className={Style.logo}>Eteration</h1>
           </div>
-          <div className={cn('col-8', Style.contentBox)}>
+          <div className={cn('col-1 col-sm-1 col-md-6 col-xl-8', Style.contentBox, Style.searchBox)}>
             <Input className={Style.search} placeholder="Search" />
           </div>
-          <div className={cn('col-2', Style.contentBox)}>
+          <div className={cn('col-8 col-sm-6 col-md-3 col-xl-2', Style.contentBox)}>
             <div className={Style.basket}>
               <Portfeil />
               <span>{total}</span>

@@ -1,3 +1,4 @@
+@import '../../../styles/mixins';
 .filterContainer {
   margin-bottom: 19px;
   max-height: 400px;
@@ -40,6 +41,15 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 30px;
   row-gap: 26px;
+  @include breakpoint (lg) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include breakpoint (md) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint (xs) {
+    grid-template-columns: 1fr;
+  }
 }
 .basketBox {
   display: grid;

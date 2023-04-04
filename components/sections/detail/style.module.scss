@@ -1,3 +1,4 @@
+@import '../../../styles/mixins';
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,6 +8,9 @@
   row-gap: 15px;
   padding: 10px;
   background-color: #fff;
+  @include breakpoint(md){
+    grid-template-columns: 1fr;
+  }
 }
 .imgBox {
   position: relative;

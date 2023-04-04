@@ -101,7 +101,7 @@ const HomeSection = () => {
   return (
     <>
       <Loading isOpen={loading} />
-      <div className="col-2">
+      <div className="col-md-3 col-lg-3 col-xl-2">
         <div className={Style.filterContainer}>
           <span>Sort By</span>
 
@@ -153,7 +153,7 @@ const HomeSection = () => {
           </div>
         </div>
       </div>
-      <div className="col-8">
+      <div className="col-md-8 col-lg-6 col-xl-8">
         <div className={Style.cardContainer}>
           {[...filterProducts]
             ?.sort(compare)

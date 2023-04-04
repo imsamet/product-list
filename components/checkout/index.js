@@ -13,7 +13,7 @@ const Checkout = () => {
     setTotal(`${useTotalPrice(basket)}₺`);
   }, [basket]);
   return (
-    <div className="col-2">
+    <div className={cn("col-sm-12 col-lg-3 col-xl-2", Style.container)}>
       <div className={cn(Style.sticy)}>
         {basket.length > 0 && (
           <div className={cn(Style.filterContainer)}>
@@ -38,7 +38,7 @@ const Checkout = () => {
         <div className={cn(Style.filterContainer, Style.checkout)}>
           <div className={Style.filterBox}>
             <span>Checkout</span>
-            <div className="">
+            <div className={Style.totalBox}>
               <label>
                 Total Price: <span>{total}</span>
               </label>

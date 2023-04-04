@@ -24,7 +24,6 @@ const DetailSection = () => {
     if (products) {
       const item = products.find(i => i.id === router?.query?.slug);
       item ? setData(item) : router.push('/');
-      console.log(item);
     }
   }, [products]);
   const buttonText = basket.some(i => i?.id === router?.query?.slug) ? 'Remove to Cart' : 'Add to Cart';
@@ -34,7 +33,7 @@ const DetailSection = () => {
   return (
     <>
       <Loading isOpen={loading} />
-      <div className="col-10">
+      <div className="col-sm-12 col-lg-9 col-xl-10">
         <div className={Style.container}>
           <div className={Style.imgBox}>
             <Image src={data?.image} layout="fill" objectFit="cover" />
