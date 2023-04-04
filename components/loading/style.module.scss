@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f269;
+  transition: z-index $delay step-end, opacity $delay;
+  opacity: 0;
+  z-index: -9999;
+  backdrop-filter: blur(3px);
+  &.open{
+    transition: z-index $delay step-start, opacity $delay;
+    opacity: 1;
+    z-index: 9999999;
+  }
+}
+.loader {
+  border: 8px solid #ededed;
+  border-radius: 50%;
+  border-top: 8px solid $color-primary;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.withLogin{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  .grey{
+    margin-right: 0;
+  }
+}
