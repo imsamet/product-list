@@ -4,13 +4,13 @@ import Style from './style.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { countUp, countDown } from '../../store/slices/basket';
 import Button from '../../elements/button';
-import useTotalPrice from '../../hooks/useTotalPrice';
+import totalPrice from '../../constants/totalPrice';
 const Checkout = () => {
   const dispatch = useDispatch();
   const { basket } = useSelector(state => state.basket);
   const [total, setTotal] = useState('0,00₺');
   useEffect(() => {
-    setTotal(`${useTotalPrice(basket)}₺`);
+    setTotal(`${totalPrice(basket)}₺`);
   }, [basket]);
   return (
     <div className={cn("col-sm-12 col-lg-3 col-xl-2", Style.container)}>
@@ -20,7 +20,7 @@ const Checkout = () => {
             <span>Cart</span>
             <div className={Style.filterBox}>
               {basket?.map(i => (
-                <div className={Style.basketBox}>
+                <div key={i?.id} className={Style.basketBox}>
                   <div className={Style.headBox}>
                     <h4>{i?.name}</h4>
                     <span>{i?.price}₺</span>

@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
 
-const useTotalPrice = (basket) => {
+const totalPrice = (basket) => {
   let price = 0;
   basket.map(i => {
     price += i.count * parseFloat(i?.price.replace(',', ''));
   });
-  return new Intl.NumberFormat('tr-TR', {
+  const data = new Intl.NumberFormat('tr-TR', {
     style: 'currency',
     currency: 'TRY',
     minimumFractionDigits: 2,
   })
     .format(price)
-    .replace('₺', '');
+    .replace('₺', '')
+  return <>{data}</>;
 };
-export default useTotalPrice
+export default totalPrice

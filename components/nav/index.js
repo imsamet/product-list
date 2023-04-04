@@ -4,12 +4,12 @@ import Style from './style.module.scss';
 import { Portfeil, Profile } from '../../elements/icons';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import useTotalPrice from '../../hooks/useTotalPrice';
+import totalPrice from '../../constants/totalPrice';
 const Nav = () => {
   const { basket } = useSelector(state => state.basket);
   const [total, setTotal] = useState("0,00₺");
   useEffect(() => {
-    setTotal(`${useTotalPrice(basket)}₺`)
+    setTotal(`${totalPrice(basket)}₺`)
   }, [basket])
   return (
     <nav className={Style.nav}>
